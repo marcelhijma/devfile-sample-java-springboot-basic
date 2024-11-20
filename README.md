@@ -46,7 +46,7 @@ To publish in Openshift, we will use helm chart. To create a helm structure:
 
 ```helm create springboot-demo```
 
-Edit the file values.yaml:
+Edit the file `values.yaml`:
 
 ```
 Edit line 10:  repository: juancvilla/springboot
@@ -63,3 +63,18 @@ Edit lines 89-96:
 #    path: /
 #    port: http
 ```
+Edit file: `Chart.yaml`
+
+```
+Edit line 24:# appVersion: "1.16.0"
+```
+
+Run the following commands to test on Openshift:
+
+```
+oc login --token=sha256~z31_QeR274gszXIsDZjS0z3ijyIF1lKHd0000O7xoFc --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
+helm install myspringboot springboot-demo
+oc get svc
+oc expose svc myspringboot-demo
+```
+Fin
