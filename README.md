@@ -23,7 +23,7 @@ docker build -f docker/Dockerfile -t juancvilla/springboot:4.0 .
 docker image ls
 ```
 
-To Publish you docker navigate to: `https://hub.docker.com/`
+To Publish you docker navigate and enter with your credentias to: `https://hub.docker.com/`
 
 Go to repositories, and create a new repository: `juancvilla/springboot` with TAG: `4.0`
 
